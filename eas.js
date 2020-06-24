@@ -26,7 +26,6 @@ var x = 16;
 var y = 256;
 var z = 500 / x;
 
-createResetBtn();
 
 function createResetBtn(){
     x = 16;
@@ -37,30 +36,29 @@ function createResetBtn(){
         createGridDiv(y);
     });
 }
+createResetBtn();
 
 
 function resetGridSize(){
-    x = prompt('Hey! What gird size would you want to use for your canvas, 16? \n or maybe try choosing another number');
+    x = prompt('Hey! What gird size would you want to use for your canvas, 16? \n or maybe try choosing another number','16');
     if(x > 500){
         alert('Ops! The grid size cannot exceed 500. Enter a number lesser than 501');
         resetGridSize();
-    } else if(x == ''){
-        // x = 16;
-        y = Math.pow(x, 2);
-        console.log(y);
+    } else if(x === ''){
+        x = 16;
+        y = Math.pow(x,2);
     } else if(x){
-        // x = 16;
         y = Math.pow(x, 2);
-        console.log(y);
     } else {
-        // x = 16;
         y = Math.pow(x, 2);
-        console.log(y);
     }
 }
 
 
 function createGridDiv(y){
+    while(container.firstChild){
+        container.removeChild(container.lastChild);
+    }
        for(let i = 0; i < y; i++){
         const div = document.createElement('div');
         div.className = 'squares';        
@@ -97,4 +95,3 @@ function setGridProperties(z){
         element.style.backgroundColor = '#777';
     });
 }
-console.log(document);
