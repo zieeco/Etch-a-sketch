@@ -1,0 +1,15 @@
+* {
+    background-color: #EEEEEE;
+    margin: auto;
+    text-align: center; 
+}
+a:link{
+    text-decoration: none;
+    color: #954;
+}
+a:visited {
+	color:#954;
+}
+a:hover {
+	color: black;
+}
